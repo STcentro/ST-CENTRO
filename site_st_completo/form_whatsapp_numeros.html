@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --dark-gray: #343a40;
+            --primary-blue: #007bff;
+            --form-bg-color1: rgba(0, 86, 179, 0.9);
+            --form-bg-color2: rgba(0, 61, 122, 0.9);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 40px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .section-title p {
+            font-size: 1.1rem;
+            color: #dddddd;
+        }
+        .text-white {
+            color: var(--white) !important;
+        }
+        .form-section {
+          background: linear-gradient(var(--form-bg-color1), var(--form-bg-color2));
+          background-size: cover;
+          background-position: center;
+          color: var(--white);
+          padding: 2rem 0;
+        }
+        .form-container {
+          max-width: 600px;
+          margin: 0 auto;
+          background-color: var(--white);
+          padding: 2rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+        .form-group {
+          margin-bottom: 1.5rem;
+        }
+        .form-label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          color: var(--dark-gray);
+        }
+        .form-control {
+          display: block;
+          width: 100%;
+          padding: 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: var(--dark-gray);
+          background-color: var(--white);
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+          box-sizing: border-box;
+          transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .form-control:focus {
+          border-color: var(--primary-blue);
+          outline: 0;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+        .form-control.is-invalid:focus {
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 500;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            cursor: pointer;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-secondary:hover {
+            background-color: #004085;
+            border-color: #00376e;
+        }
+        .btn-lg {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+        }
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section id="inscricao" class="section form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-white">Garanta sua vaga</h2>
+                <p class="text-white">Preencha o formulário abaixo e entraremos em contato</p>
+            </div>
+            <div class="form-container">
+                <form id="inscricao-form" novalidate>
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone" class="form-label">Telefone (WhatsApp - apenas números)</label>
+                        <input type="tel" class="form-control" id="telefone" placeholder="Ex: 43996430153" required maxlength="11">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="turma" class="form-label">Turma de interesse</label>
+                        <select class="form-control" id="turma" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="sabado">Sábado (8h às 17h)</option>
+                            <option value="domingo">Domingo (8h às 17h)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem" class="form-label">Mensagem (opcional)</label>
+                        <textarea class="form-control" id="mensagem" rows="3" placeholder="Digite sua mensagem ou dúvida"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block">INSCREVER-SE AGORA</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('inscricao-form');
+            const telefoneField = document.getElementById('telefone');
+
+            if (telefoneField) {
+                telefoneField.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for dígito
+                    if (value.length > 11) {
+                        value = value.substring(0, 11); // Limita a 11 dígitos (DDD + 9 dígitos)
+                    }
+                    e.target.value = value;
+                });
+            }
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let isValid = true;
+                    const requiredFields = form.querySelectorAll('[required]');
+
+                    requiredFields.forEach(field => {
+                        field.classList.remove('is-invalid');
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('is-invalid');
+                        } else {
+                            if (field.type === 'email') {
+                                const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                                if (!emailRegex.test(field.value.trim())) {
+                                    isValid = false;
+                                    field.classList.add('is-invalid');
+                                }
+                            }
+                            if (field.id === 'telefone') {
+                                const phoneDigits = field.value.replace(/\D/g, '');
+                                // Valida se tem 10 ou 11 dígitos
+                                if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+                                    isValid = false;
+                                    field.classList.add('is-invalid');
+                                }
+                            }
+                        }
+                    });
+
+                    if (!isValid) {
+                        const firstInvalidField = form.querySelector('.is-invalid');
+                        if (firstInvalidField) {
+                            firstInvalidField.focus();
+                        }
+                        alert('Por favor, preencha todos os campos obrigatórios corretamente. O telefone deve conter 10 ou 11 números (DDD + número).');
+                        return;
+                    }
+
+                    const nome = document.getElementById('nome').value.trim();
+                    let telefoneInput = document.getElementById('telefone').value.replace(/\D/g, '');
+                    const email = document.getElementById('email').value.trim();
+                    const turma = document.getElementById('turma').value;
+                    const mensagemOpcional = document.getElementById('mensagem').value.trim();
+
+                    // Formata o telefone para (XX) XXXXX-XXXX ou (XX) XXXX-XXXX
+                    let telefoneFormatado = '';
+                    if (telefoneInput.length === 11) {
+                        telefoneFormatado = `(${telefoneInput.substring(0, 2)}) ${telefoneInput.substring(2, 7)}-${telefoneInput.substring(7)}`;
+                    } else if (telefoneInput.length === 10) {
+                        telefoneFormatado = `(${telefoneInput.substring(0, 2)}) ${telefoneInput.substring(2, 6)}-${telefoneInput.substring(6)}`;
+                    } else {
+                        telefoneFormatado = telefoneInput; // Caso não bata com 10 ou 11, envia como está (já validado antes)
+                    }
+
+                    let mensagemWhatsApp = `Nova Inscrição Recebida:\n\n`;
+                    mensagemWhatsApp += `Nome: ${nome}\n`;
+                    mensagemWhatsApp += `Telefone (formulário): ${telefoneFormatado}\n`; // Usa o formatado
+                    mensagemWhatsApp += `Email: ${email}\n`;
+                    mensagemWhatsApp += `Turma: ${turma}\n`;
+                    if (mensagemOpcional) {
+                        mensagemWhatsApp += `Mensagem: ${mensagemOpcional}\n`;
+                    }
+
+                    const numeroWhatsAppDestino = "55" + "43996430153"; // Adiciona o DDI do Brasil
+                    const mensagemCodificada = encodeURIComponent(mensagemWhatsApp);
+                    const urlWhatsApp = `https://wa.me/${numeroWhatsAppDestino}?text=${mensagemCodificada}`;
+
+                    window.open(urlWhatsApp, '_blank');
+                    alert('O WhatsApp será aberto para que possa enviar os dados da sua inscrição. Por favor, confirme o envio na janela/aplicação do WhatsApp.');
+                    form.reset();
+                    requiredFields.forEach(field => field.classList.remove('is-invalid'));
+                });
+
+                const allFields = form.querySelectorAll('.form-control[required]');
+                allFields.forEach(field => {
+                    field.addEventListener('input', () => {
+                        if (field.classList.contains('is-invalid')) {
+                            let fieldIsValid = true;
+                            if (!field.value.trim()){
+                                fieldIsValid = false;
+                            } else {
+                                if (field.type === 'email') {
+                                    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+                                    if (!emailRegex.test(field.value.trim())) fieldIsValid = false;
+                                }
+                                if (field.id === 'telefone') {
+                                    const phoneDigits = field.value.replace(/\D/g, '');
+                                    if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+                                         fieldIsValid = false;
+                                    }
+                                }
+                            }
+                            if(fieldIsValid) {
+                                field.classList.remove('is-invalid');
+                            }
+                        }
+                    });
+                });
+            } else {
+                console.error("Formulário com ID 'inscricao-form' não encontrado.");
+            }
+        });
+    </script>
+</body>
+</html>
